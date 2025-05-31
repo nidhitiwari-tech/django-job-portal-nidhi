@@ -1,0 +1,22 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<h2>Applicants for {{ job.title }}</h2>
+
+{% if applications %}
+<ul>
+    {% for app in applications %}
+    <li>
+        <strong>{{ app.candidate.username }}</strong><br>
+        Message: {{ app.message }}<br>
+        Resume: <a href="{{ app.resume.url }}" target="_blank">Download</a><br>
+        Applied on: {{ app.applied_on }}
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No applications yet.</p>
+{% endif %}
+
+<a href="{% url 'employer_jobs' %}">← Back to My Jobs</a>
+{% endblock %}

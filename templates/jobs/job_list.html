@@ -1,0 +1,32 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<h2 class="mb-4">Available Jobs</h2>
+
+<form method="get" class="row g-3 mb-4">
+  <div class="col-md-5">
+    <input type="text" name="q" class="form-control" placeholder="Search by title or description" value="{{ request.GET.q }}">
+  </div>
+  <div class="col-md-5">
+    <input type="text" name="location" class="form-control" placeholder="Location" value="{{ request.GET.location }}">
+  </div>
+  <div class="col-md-2">
+    <button type="submit" class="btn btn-primary w-100">Search</button>
+  </div>
+</form>
+
+<div class="row">
+  {% for job in jobs %}
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ job.title }}</h5>
+          <p class="card-text">{{ job.location }} | ₹{{ job.salary }}</p>
+          <a href="{% url 'apply_job' job.id %}" class="btn btn-outline-primary">Apply</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No jobs found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

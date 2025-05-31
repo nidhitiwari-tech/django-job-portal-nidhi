@@ -1,0 +1,51 @@
+{% extends 'jobs/base.html' %}
+{% load crispy_forms_tags %}  <!-- Optional: If using crispy forms -->
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Register</h4>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="id_username" class="form-label"></label>
+            {{ form.username|as_crispy_field }}
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="id_email" class="form-label"></label>
+            {{ form.email|as_crispy_field }}
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="id_password1" class="form-label"></label>
+            {{ form.password1|as_crispy_field }}
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="mb-3">
+            <label for="id_password2" class="form-label"></label>
+            {{ form.password2|as_crispy_field }}
+          </div>
+
+          <!-- Role -->
+          <div class="mb-3">
+            <label for="id_role" class="form-label"></label>
+            {{ form.role|as_crispy_field }}
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

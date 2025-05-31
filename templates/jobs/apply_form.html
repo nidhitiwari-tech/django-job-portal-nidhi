@@ -1,0 +1,20 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<h2>Apply to {{ job.title }}</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Submit Application</button>
+</form>
+
+{% if request.GET.submitted %}
+<script>
+    Swal.fire({
+      icon: 'success',
+      title: 'Application Submitted!',
+      showConfirmButton: false,
+      timer: 2000
+    });
+</script>
+{% endif %}
+{% endblock %}
