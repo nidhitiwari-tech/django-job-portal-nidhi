@@ -66,10 +66,5 @@ Features
 - SweetAlert feedback (registration, login, apply)
 - Bootstrap UI with cards, navbar, etc.
 
-Submission
-
-Once deployed or pushed:
-1. Share the GitHub repository URL or deployed URL
-2. Include login details (if applicable) for Employer/Candidate/Admin
 
 Made by Nidhi Tiwari
