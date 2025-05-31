@@ -67,4 +67,21 @@ Features
 - Bootstrap UI with cards, navbar, etc.
 
 
+Login Details:
+Candiates:
+user1
+New#2025
+
+nidhitiwari
+Doit#2025
+
+
+Employer:
+test
+Test#2025
+
+Nidhi
+Test#2025
+
+
 Made by Nidhi Tiwari
